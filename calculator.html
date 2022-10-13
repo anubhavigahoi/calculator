@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=
+    ">
+    <title>Calculator</title>
+    <style>
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            transition: all 0.5s ease;
+        }
+
+        body{
+            font-family: arial;
+        }
+
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .calculator{
+            position:relative;
+            height: auto;
+            width: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px #000;
+
+        }
+
+        .theme-toggler{
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .theme-toggler.active::before{
+            background-color: #fff;
+        }
+
+        .theme-toggler::before{
+            content: '';
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50% , -50%);
+            border-radius: 50%;
+            background-color: #333;
+            z-index: -1;
+        }
+
+        #display{
+            margin: 0 10px;
+            height: 120px;
+            width: auto;
+            max-width: 270px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            font-size: 30px;
+            margin-bottom: 20px;
+            overflow-x: scroll;
+        }
+
+        #display::-webkit-scrollbar{
+            display: block;
+            height: 3px;
+        }
+
+        button {
+            height: 60px;
+            width: 60px;
+            border: 0;
+            border-radius: 30px;
+            margin: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 200ms ease;
+        }
+
+        button:hover{
+            transform: scale(1.1);
+        }
+        
+        .button {
+            border: 0.5px solid #999;
+            line-height: 60px;
+            text-align: center;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        button#equal {
+            height: 130px;
+        }
+
+
+    </style>
+</head>
+<body>
+        <div class="container">
+            <div class="calculator dark">
+                <div class="theme-toggler active">
+                    <i class="toggler-icon"></i>
+                </div>
+                <div class="display-screen">
+                    <div id="display"></div>
+                </div>
+                <div class="buttons">
+                    <table>
+                        <tr>
+                                <td><button class="button btn-operator" id="clear">C</b</button></td>
+                                <td><button class="button btn-operator">/</button></td>
+                                <td><button class="button btn-operator">*</button>
+                                <td><button class="button" id="backspace"><</i></b></td>
+                        </tr>
+                        
+
+                        <tr>
+                            <td><button class="button btn-number">7</button></td>
+                            <td><button class="button btn-number">8</button></td>
+                            <td><button class="button btn-number">9</button></td>
+                            <td><button class="button">-</button></td>  
+                        </tr>
+
+                        <tr>
+                                <td><button class="button btn-number">4</button></td>
+                                <td><button class="button btn-number">5</button></td>
+                                <td><button class="button btn-number">6</button></td>
+                                <td><button class="button">+</button></td>
+                        </tr>
+
+                        <tr>
+                                <td><button class="button btn-number">1</button></td>
+                                <td><button class="button btn-number">2</button></td>
+                                <td><button class="button btn-number">3</button></td>
+                                <td><button class="button btn-operator">.</button></td>
+                        </tr>
+
+                        <tr>
+                                <td><button class="button btn-number">0</button></td>
+                                <td><button class="button btn-operator">(</button></td>
+                                <td><button class="button btn-operator">)</button></td>
+                                <td><button id="equal" class="button btn-operator">=</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+
+    <script src="script3.js"></script>
+
+</body>
+</html>
+
